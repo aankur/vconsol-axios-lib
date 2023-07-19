@@ -6,7 +6,7 @@
   "scripts": {
     "lint-fix": "semistandard --fix",
     "test": "semistandard && jest --config ./jest.config.json",
-    "pretest": "babel --plugins @babel/plugin-transform-modules-commonjs index.mjs --out-file index.js",
+    "pretest": "node babel-transformer.js",
     "prepublishOnly": "npm run test"
   },
   "exports": {
@@ -17,7 +17,9 @@
   "license": "MIT",
   "semistandard": {
     "ignore": [
-      "index.js"
+      "index.js",
+      "current-time-factory.js",
+      "secure-hasher.js"
     ]
   },
   "engines": {
