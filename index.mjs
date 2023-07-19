@@ -2,8 +2,8 @@
 
 import axios from 'axios';
 import * as _ from 'lodash';
-import CurrentTimeFactory from './current-time-factory.mjs';
-import SecureHasher from './secure-hasher.mjs';
+import CurrentTimeFactory from './current-time-factory';
+import SecureHasher from './secure-hasher';
 
 function requestInterceptor (config, apiKey, apiSecret) {
   const data = _.isString(config.data || '') ? config.data : JSON.stringify(config.data);
