@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-env jest */
 
-const VconsolAxiosFactory = require('./index.js').default;
+const VconsolAxiosFactory = require('./vconsol-http-lib.js').default;
 
 test('Validate VconsolAxiosFactory (cjs)', () => {
   const axios = VconsolAxiosFactory(null, 'https://example.com/', {

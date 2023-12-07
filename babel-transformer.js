@@ -13,7 +13,13 @@ fs.writeFileSync('secure-hasher.js', babel.transformFileSync('secure-hasher.mjs'
   }]]
 }).code);
 
-fs.writeFileSync('index.js', babel.transformFileSync('index.mjs', {
+fs.writeFileSync('vconsol-http-lib.js', babel.transformFileSync('vconsol-http-lib.mjs', {
+  plugins: [['@babel/plugin-transform-modules-commonjs', {
+    allowTopLevelThis: true
+  }]]
+}).code);
+
+fs.writeFileSync('vconsol-client.js', babel.transformFileSync('vconsol-client.mjs', {
   plugins: [['@babel/plugin-transform-modules-commonjs', {
     allowTopLevelThis: true
   }]]

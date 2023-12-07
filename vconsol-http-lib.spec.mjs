@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-env jest */
 
-import VconsolAxiosFactory from './index.mjs';
+import VconsolAxiosFactory from './vconsol-http-lib.mjs';
 
 describe('Validate VconsolAxiosFactory', () => {
   const axios = VconsolAxiosFactory(null, 'https://example.com/', {

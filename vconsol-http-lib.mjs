@@ -1,12 +1,12 @@
 'use strict';
 
 import axios from 'axios';
-import * as _ from 'lodash';
-import CurrentTimeFactory from './current-time-factory';
-import SecureHasher from './secure-hasher';
+import isString from 'lodash/isString.js';
+import CurrentTimeFactory from './current-time-factory.mjs';
+import SecureHasher from './secure-hasher.mjs';
 
 function requestInterceptor (config, apiKey, apiSecret) {
-  const data = _.isString(config.data || '') ? config.data : JSON.stringify(config.data);
+  const data = isString(config.data || '') ? config.data : JSON.stringify(config.data);
   const hash = SecureHasher.hash(CurrentTimeFactory, apiSecret, data);
   config.headers['X-API-KEY'] = apiKey;
   config.headers['X-REQUEST-SIGNATURE'] = hash;

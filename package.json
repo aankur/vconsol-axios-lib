@@ -1,8 +1,8 @@
 {
   "name": "vconsol-axios-lib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "vconsol-client.mjs",
   "scripts": {
     "lint-fix": "semistandard --fix",
     "test": "semistandard && jest --config ./jest.config.json",
@@ -10,29 +10,30 @@
     "prepublishOnly": "npm run test"
   },
   "exports": {
-    "require": "./index.js",
-    "import": "./index.mjs"
+    "require": "./vconsol-client.js",
+    "import": "./vconsol-client.mjs"
   },
   "author": "Ankur Deep Jaiswal <ankur@techgentsia.com>",
   "license": "MIT",
   "semistandard": {
     "ignore": [
-      "index.js",
+      "vconsol-client.js",
+      "vconsol-http-lib.js",
       "current-time-factory.js",
       "secure-hasher.js"
     ]
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "devDependencies": {
-    "axios": "^1.4.0",
     "@babel/cli": "^7.21.0",
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
+    "axios": "^1.4.0",
     "babel-jest": "^29.5.0",
     "jest": "^29.5.0",
-    "semistandard": "^16.0.1"
+    "semistandard": "^17.0.0"
   },
   "dependencies": {
     "lodash": "^4.17.21"
