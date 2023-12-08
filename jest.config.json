@@ -3,6 +3,5 @@
   "testMatch": ["**/?(*.)spec.js", "**/?(*.)spec.mjs", "**/?(*.)spec.cjs"],
   "moduleFileExtensions":["js","jsx","ts","tsx","json","node","mjs", "cjs"],
   "transform": {
-
   }
 }

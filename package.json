@@ -1,21 +1,25 @@
 {
   "name": "vconsol-node-client",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
-  "main": "vconsol-client.mjs",
+  "main": "vconsol-client.js",
   "type": "module",
   "scripts": {
     "lint-fix": "semistandard --fix",
     "test": "semistandard && node --experimental-vm-modules node_modules/jest/bin/jest.js --config ./jest.config.json",
+    "pretest": "npx rollup vconsol-client.js --file vconsol-client.cjs --format cjs",
     "prepublishOnly": "npm run test"
   },
   "exports": {
     "require": "./vconsol-client.cjs",
-    "import": "./vconsol-client.mjs"
+    "import": "./vconsol-client.js"
   },
   "author": "Ankur Deep Jaiswal <ankur@techgentsia.com>",
   "license": "MIT",
   "semistandard": {
+    "ignore": [
+      "vconsol-client.cjs"
+    ]
   },
   "engines": {
     "node": ">=16.0.0"
@@ -27,6 +31,7 @@
     "axios": "^1.4.0",
     "babel-jest": "^29.5.0",
     "jest": "^29.7.0",
+    "rollup": "^3.29.4",
     "semistandard": "^17.0.0"
   },
   "dependencies": {
