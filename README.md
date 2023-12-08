@@ -11,7 +11,7 @@
 ### Npm users
 
 ```
-npm install aankur/vconsol-node-client@tag
+npm install aankur/vconsol-node-client#tag
 ```
 
 Request Params defined here: [Request Params](https://github.com/aankur/vconsol-java-client/tree/master/src/main/java/com/techgentsia/param)
