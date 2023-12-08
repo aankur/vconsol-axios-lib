@@ -1,13 +1,12 @@
 {
   "name": "vconsol-node-client",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "vconsol-client.mjs",
   "type": "module",
   "scripts": {
     "lint-fix": "semistandard --fix",
-    "test": "semistandard && jest --config ./jest.config.json",
-    "pretest": "node babel-transformer.js",
+    "test": "semistandard && node --experimental-vm-modules node_modules/jest/bin/jest.js --config ./jest.config.json",
     "prepublishOnly": "npm run test"
   },
   "exports": {
@@ -17,23 +16,17 @@
   "author": "Ankur Deep Jaiswal <ankur@techgentsia.com>",
   "license": "MIT",
   "semistandard": {
-    "ignore": [
-      "vconsol-client.cjs",
-      "vconsol-http-lib.cjs",
-      "current-time-factory.cjs",
-      "secure-hasher.cjs"
-    ]
   },
   "engines": {
     "node": ">=16.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.21.0",
-    "@babel/core": "^7.21.3",
-    "@babel/preset-env": "^7.20.2",
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.5",
+    "@babel/preset-env": "^7.23.5",
     "axios": "^1.4.0",
     "babel-jest": "^29.5.0",
-    "jest": "^29.5.0",
+    "jest": "^29.7.0",
     "semistandard": "^17.0.0"
   },
   "dependencies": {

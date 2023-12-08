@@ -1,32 +1,32 @@
-"use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = VconsolClientFactory;
-var _vconsolHttpLib = _interopRequireDefault(require("./vconsol-http-lib.js"));
-var _meetingService = _interopRequireDefault(require("./service/meeting-service.js"));
-var _scheduleService = _interopRequireDefault(require("./service/schedule-service.js"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+const VconsolAxiosFactory = require('./vconsol-http-lib.cjs');
+const MeetingService = require('./service/meeting-service.cjs');
+const ScheduleService = require('./service/schedule-service.cjs');
+
 class VconsolClient {
   #responseHandler;
   #meetingService;
   #scheduleService;
-  constructor(baseURL, options) {
-    this.#responseHandler = (0, _vconsolHttpLib.default)(null, baseURL, options);
-    this.#meetingService = new _meetingService.default(baseURL, this.#responseHandler);
-    this.#scheduleService = new _scheduleService.default(this.#responseHandler);
+
+  constructor (baseURL, options) {
+    this.#responseHandler = VconsolAxiosFactory(null, baseURL, options);
+    this.#meetingService = new MeetingService(baseURL, this.#responseHandler);
+    this.#scheduleService = new ScheduleService(this.#responseHandler);
   }
-  get schedules() {
+
+  get schedules () {
     return this.#scheduleService;
   }
-  get meetings() {
+
+  get meetings () {
     return this.#meetingService;
   }
-  get responseHandler() {
+
+  get responseHandler () {
     return this.#responseHandler;
   }
 }
-function VconsolClientFactory(baseURL, options) {
+
+module.exports = function VconsolClientFactory (baseURL, options) {
   return new VconsolClient(baseURL, options);
 }

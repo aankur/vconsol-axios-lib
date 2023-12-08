@@ -1,8 +1,8 @@
 {
   "verbose":true,
-  "testMatch": ["**/?(*.)spec.js", "**/?(*.)spec.mjs"],
-  "moduleFileExtensions":["js","jsx","ts","tsx","json","node","mjs"],
+  "testMatch": ["**/?(*.)spec.js", "**/?(*.)spec.mjs", "**/?(*.)spec.cjs"],
+  "moduleFileExtensions":["js","jsx","ts","tsx","json","node","mjs", "cjs"],
   "transform": {
-    "^.+\\.m?js$": "babel-jest"
+
   }
 }
