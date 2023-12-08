@@ -1,5 +1,5 @@
 {
-  "name": "vconsol-axios-lib",
+  "name": "vconsol-node-client",
   "version": "1.0.1",
   "description": "",
   "main": "vconsol-client.mjs",
