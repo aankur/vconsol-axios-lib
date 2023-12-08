@@ -11,7 +11,7 @@
 ### Npm users
 
 ```
-npm install aankur/vconsol-node-client@tag
+npm install aankur/vconsol-node-client#tag
 ```
 
 Request Params defined here: [Request Params](https://github.com/aankur/vconsol-java-client/tree/master/src/main/java/com/techgentsia/param)
@@ -33,7 +33,7 @@ const vconsolClient = VconsolClientFactory('https://your-tenant"', {
 const data = await vconsolClient.schedules.createMeetingSchedule('sample@example.com', {
   title: 'sample meeting',
   description: 'sample description',
-  startTime: '2023-12-12T10:40:00+5:30',// ISO 8601 Timestamp format without seconds
+  startTime: '2023-12-12T10:40:00+5:30',// ISO 8601 Timestamp format without milliseconds
   endTime: '2023-12-13T10:40:00+5:30'
 });
 
