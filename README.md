@@ -23,7 +23,7 @@ Sample.js
 
 ```javascript
 
-import VconsolClientFactory from 'vconsol-axios-lib';
+import VconsolClientFactory from 'vconsol-node-client';
 const vconsolClient = VconsolClientFactory('https://your-tenant"', {
   apiKey: 'your api key',
   apiSecret: 'Your api secret'
