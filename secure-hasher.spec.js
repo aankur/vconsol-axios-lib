@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-env jest */
 
-import SecureHasher from './secure-hasher.mjs';
+import SecureHasher from './secure-hasher.js';
 
 const currentDateTimeFactory = {
   now: function () {

@@ -1,8 +1,9 @@
 {
   "name": "vconsol-node-client",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "",
   "main": "vconsol-client.mjs",
+  "type": "module",
   "scripts": {
     "lint-fix": "semistandard --fix",
     "test": "semistandard && jest --config ./jest.config.json",
@@ -10,17 +11,17 @@
     "prepublishOnly": "npm run test"
   },
   "exports": {
-    "require": "./vconsol-client.js",
+    "require": "./vconsol-client.cjs",
     "import": "./vconsol-client.mjs"
   },
   "author": "Ankur Deep Jaiswal <ankur@techgentsia.com>",
   "license": "MIT",
   "semistandard": {
     "ignore": [
-      "vconsol-client.js",
-      "vconsol-http-lib.js",
-      "current-time-factory.js",
-      "secure-hasher.js"
+      "vconsol-client.cjs",
+      "vconsol-http-lib.cjs",
+      "current-time-factory.cjs",
+      "secure-hasher.cjs"
     ]
   },
   "engines": {
