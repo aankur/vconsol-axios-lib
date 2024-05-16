@@ -117,6 +117,15 @@ class ScheduleService {
     );
     return data;
   }
+
+  async rescheduleMeetingSchedule (email, meetingID, meetingScheduleParam) {
+    const path = `/external/api/v1/schedules/${encodeURIComponent(email)}/${encodeURIComponent(meetingID)}/reschedule`;
+    const { data } = await this.#responseHandler.put(
+      path,
+      meetingScheduleParam
+    );
+    return data;
+  }
 }
 
 class RecordingService {
